@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.ChatsFragment">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatrecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/lnInvite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invite Your Friends"
+            android:textColor="@android:color/black"
+            android:textSize="25dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:text="None of your contacts use MediaClub.\nUse the button below to invite them." />
+
+        <Button
+            android:id="@+id/btnInvite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="false"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:text="Invite Friend"
+            app:backgroundTint="@color/colorPrimary"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:src="@android:drawable/stat_notify_chat"
+        android:tint="@android:color/white"
+        tools:ignore="ContentDescription,RtlHardcoded" />-->
+</FrameLayout>

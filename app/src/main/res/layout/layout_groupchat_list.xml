@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/groupIcon"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="5dp"
+            android:padding="5dp"
+            android:src="@drawable/group_icon"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="2dp" />
+
+
+        <TextView
+            android:id="@+id/tvGroupTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="Group Name"
+            android:textColor="@color/darkGray"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_toRightOf="@+id/groupIcon"
+            android:layout_toEndOf="@+id/groupIcon" />
+
+        <TextView
+            android:id="@+id/tvSender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Sender Name: "
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/groupIcon"
+            android:layout_toEndOf="@+id/groupIcon"
+            android:layout_below="@+id/tvGroupTitle"
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp" />
+
+        <TextView
+            android:id="@+id/tvLastMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Last Message"
+            android:layout_toRightOf="@+id/tvSender"
+            android:layout_toEndOf="@+id/tvSender"
+            android:layout_below="@+id/tvGroupTitle"/>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvLastMsg"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:text="15/04/2020"
+            android:textColor="#2E2E2E"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetUserInfoActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:text="Profile info"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="Please provide your name and an optional profile photo."
+                android:textColor="#5C5A5A"
+                android:textSize="17sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageProfile"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icon_male_ph"
+                    app:civ_border_color="@color/colorPrimary"
+                    app:civ_border_width="3dp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabCamera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/imageProfile"
+                    android:layout_alignBottom="@id/imageProfile"
+                    android:elevation="1dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_camera"
+                    app:backgroundTint="@color/colorIcon"
+                    app:tint="@android:color/white" />
+
+            </RelativeLayout>
+
+
+
+
+            <EditText
+                android:id="@+id/edName"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="7dp"
+                android:hint="Type your name here"
+                android:inputType="textCapSentences"
+                android:singleLine="true"
+                android:maxLength="16"/>
+
+            <EditText
+                android:id="@+id/edStatus"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="7dp"
+                android:inputType="textCapSentences"
+                android:hint="About"
+                android:singleLine="true"
+                android:maxLength="128"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="Next"
+        app:backgroundTint="@color/colorPrimary"
+        app:cornerRadius="10dp" />
+</RelativeLayout>

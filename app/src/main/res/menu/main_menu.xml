@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/brdCastChat"
+        android:title="New Broadcast" />
+
+    <item
+        android:id="@+id/starMsgChat"
+        android:title="Starred Messages" />
+
+    <item
+        android:id="@+id/settingsChat"
+        android:title="Settings" />
+
+    <item
+        android:id="@+id/logout"
+        android:title="LogOut" />
+
+</menu>

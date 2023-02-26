@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ChatBud.chatbud">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ChatBud">
+        <activity
+            android:name=".ViewPinnedMessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewImageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EditGroupInfoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".GroupInfoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AddGroupParticipantActivity"
+            android:exported="true" />
+        <activity android:name=".GroupChatsActivity" />
+        <activity android:name=".CreateGroupActivity" />
+        <activity android:name=".OTPVerifyChangeNumberActivity" />
+        <activity android:name=".VerifyChangeNumberActivity" />
+        <activity android:name=".ChangeNumberActivity" />
+        <activity android:name=".DeleteAccountActivity" />
+        <activity android:name=".SecurityActivity" />
+        <activity android:name=".AccountActivity" />
+        <activity android:name=".ReviewSendImageActivity" />
+        <activity android:name=".UserProfileActivity" />
+        <activity android:name=".ContactsActivity" />
+        <activity android:name=".ViewImageActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".SetUserInfoActivity" />
+        <activity android:name=".VerifyOTPActivity" />
+        <activity android:name=".PhoneLoginActivity" />
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".StartActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ChatsActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

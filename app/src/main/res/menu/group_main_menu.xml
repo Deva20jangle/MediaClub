@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/groupChat"
+        android:title="New Group" />
+
+    <item
+        android:id="@+id/starMsgGroup"
+        android:title="Starred Messages" />
+
+    <item
+        android:id="@+id/settingsGroup"
+        android:title="Settings" />
+
+</menu>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Devashish/Projects/ChatBud/ChatBud/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/drawable/bg_layout_round.xml" value="0.3828125" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/drawable/bg_text_chat_right.xml" value="0.3828125" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_chats.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_delete_account.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_group_chats.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_group_info.xml" value="0.33" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_phone_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_review_send_image.xml" value="0.33" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_set_user_info.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_setting.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_start.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/activity_view_pinned_message.xml" value="0.35260416666666666" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/chat_item_left.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/chat_item_right.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/fragment_chats.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/groupchat_item_left.xml" value="0.33" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/groupchat_item_right.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/layout/layout_chat_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/menu/chatmenu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/menu/group_main_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/menu/group_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/menu/main_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Devashish/Projects/ChatBud/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3828125" />
+        <entry key="app/src/main/res/drawable/bg_text_chat_right.xml" value="0.36203703703703705" />
+        <entry key="app/src/main/res/drawable/ic_baseline_pause_circle_filled_24.xml" value="0.36615384615384616" />
+        <entry key="app/src/main/res/drawable/ic_baseline_play_circle_filled_24.xml" value="0.36615384615384616" />
+        <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/drawable/ic_edit_black.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/drawable/ic_group_add.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/drawable/ic_group_profile.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.3527777777777778" />
+        <entry key="app/src/main/res/layout/activity_account.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_add_group_participant.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_change_number.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_chats.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_contacts.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_create_group.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_delete_account.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_edit_group_info.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_group_chats.xml" value="0.32037037037037036" />
+        <entry key="app/src/main/res/layout/activity_group_info.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_otp_verify_change_number.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_phone_login.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_review_image.xml" value="0.36041666666666666" />
+        <entry key="app/src/main/res/layout/activity_review_send_image.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_security.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_set_user_info.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_setting.xml" value="0.34074074074074073" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_start.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_verify_change_number.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_verify_otp.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/activity_view_image.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/bottom_sheet_edit_bio.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/bottom_sheet_edit_group_desc.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/bottom_sheet_edit_group_title.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/bottom_sheet_edit_name.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/bottom_sheet_pick.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/chat_item_left.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/chat_item_right.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/chattoolbar.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/dialog_view_user.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.3175925925925926" />
+        <entry key="app/src/main/res/layout/fragment_groups.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/fragment_status.xml" value="0.31203703703703706" />
+        <entry key="app/src/main/res/layout/groupchat_item_left.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/groupchat_item_right.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/layout_chat_list.xml" value="0.32037037037037036" />
+        <entry key="app/src/main/res/layout/layout_contact_item.xml" value="0.3351851851851852" />
+        <entry key="app/src/main/res/layout/layout_groupchat_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/row_add_participant.xml" value="0.33" />
+        <entry key="app/src/main/res/menu/chatmenu.xml" value="0.3175925925925926" />
+        <entry key="app/src/main/res/menu/group_menu.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context=".ReviewSendImageActivity">
+
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_male_ph"
+        android:transitionName="image" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/reViewImageToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#92000000">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="Send Image"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:padding="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        app:backgroundTint="@color/colorIcon"
+        android:src="@drawable/ic_send"
+        app:tint="@color/white" />
+</RelativeLayout>
