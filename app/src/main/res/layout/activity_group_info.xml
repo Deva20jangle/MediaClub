@@ -135,8 +135,9 @@
                 android:text="Remove Pinned Message"
                 android:padding="5dp"
                 android:textSize="16sp"
-                android:layout_marginLeft="15dp"
                 android:textColor="@color/black"
+                android:drawableLeft="@drawable/ic_close"
+                android:drawableTint="@color/red"
                 android:gravity="center_vertical"
                 android:drawablePadding="10dp"/>
 
