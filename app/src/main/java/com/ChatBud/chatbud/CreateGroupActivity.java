@@ -253,19 +253,6 @@ public class CreateGroupActivity extends AppCompatActivity {
         startActivityForResult(intent, IMAGE_PICK_CAMERA_CODE);
     }
 
-//    private boolean checkStoragePermissions(){
-//        boolean result = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
-//        return result;
-//    }
-//
-//    private void requestStoragePermissions(){
-//        ActivityCompat.requestPermissions(this, storagePermissions, STORAGE_REQUEST_CODE);
-//    }
-//
-//    private void requestCameraPermissions(){
-//        ActivityCompat.requestPermissions(this, cameraPermissions, CAMERA_REQUEST_CODE);
-//    }
-
     private void checkCameraPermissions(){
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this,
@@ -282,34 +269,6 @@ public class CreateGroupActivity extends AppCompatActivity {
         }
     }
 
-//    @Override
-//    public void OnRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
-//        switch (requestCode){
-//            case CAMERA_REQUEST_CODE:{
-//                if (grantResults.length > 0){
-//                    boolean cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-//                    boolean storageAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-//                    if (cameraAccepted && storageAccepted){
-//                        openCamera();
-//                    } else {
-//                        Toast.makeText(this, "Camera and Storage permissions are required.", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            }
-//            case STORAGE_REQUEST_CODE:{
-//                if (grantResults.length > 0){
-//                    boolean storageAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-//                    if (storageAccepted){
-//                        openGallery();
-//                    } else {
-//                        Toast.makeText(this, "Storage permissions required.", Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//            }
-//        }
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if (resultCode == RESULT_OK){
@@ -322,9 +281,5 @@ public class CreateGroupActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
-
-
-
 
 }

@@ -104,7 +104,7 @@ public class GroupChatsActivity extends AppCompatActivity {
 
     public String groupId, groupTitle, myGroupRole="", myRole;
 
-    String pinnedMessage, pinnedSender, pinnedURL, pinnedType;
+    String pinnedMessage, pinnedSender, pinnedURL, pinnedType, pinnedMessageId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -202,11 +202,29 @@ public class GroupChatsActivity extends AppCompatActivity {
             }
         });
 
+        binding.lnPinMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Groups").child(groupId).child("PinnedMessage");
+                ref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        pinnedMessageId = snapshot.child("MessageID").getValue(String.class);
+                        Log.d(TAG, "onDataChange: Pinned MessageId :: " + pinnedMessageId);
 
+                        
 
+                    }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
+                    }
+                });
+
+            }
+        });
 
     }
 

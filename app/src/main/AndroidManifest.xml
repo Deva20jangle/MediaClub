@@ -19,9 +19,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatBud">
         <activity
-            android:name=".ViewPinnedMessageActivity"
-            android:exported="false" />
-        <activity
             android:name=".ReviewImageActivity"
             android:exported="true" />
         <activity

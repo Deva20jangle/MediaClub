@@ -35,8 +35,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
+                        android:contentDescription="TODO"
                         android:src="@drawable/ic_back"
-                        android:tint="@android:color/white" />
+                        android:tint="@android:color/white"
+                        tools:ignore="TouchTargetSizeCheck" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/groupIcon"
@@ -334,10 +336,11 @@
                         android:layout_weight="1"
                         android:background="@android:color/transparent"
                         android:hint="Type a message"
+                        android:inputType="textCapSentences"
+                        android:minHeight="48dp"
                         android:padding="8dp"
                         android:textColor="@color/black"
-                        android:inputType="textCapSentences"
-                        android:textColorHint="@color/darkGray" />
+                        android:textColorHint="#757575" />
 
                     <ImageView
                         android:id="@+id/btn_file"
@@ -395,7 +398,8 @@
         android:scaleType="centerInside"
         android:tint="@android:color/white"
         android:visibility="visible"
-        app:mic_icon="@drawable/recv_ic_mic" />
+        app:mic_icon="@drawable/recv_ic_mic"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
