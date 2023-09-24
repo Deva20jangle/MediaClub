@@ -49,7 +49,8 @@
         android:layout_width="200dp"
         android:layout_height="225dp"
         android:layout_marginLeft="100dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/txtImageSenderName"
@@ -86,7 +87,8 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/txtAudioSenderName"
@@ -103,8 +105,8 @@
         <LinearLayout
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="@drawable/bg_layout_round"
+            android:orientation="horizontal"
             android:padding="5dp"
             android:visibility="visible">
 
@@ -119,10 +121,10 @@
 
                 <ImageView
                     android:id="@+id/btnPlayChat"
-                    android:padding="10dp"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_centerVertical="true"
+                    android:padding="10dp"
                     android:visibility="visible" />
 
                 <!--            <ImageButton
@@ -162,8 +164,9 @@
     <LinearLayout
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:orientation="vertical"
-        android:layout_marginTop="3dp">
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/txtDocSenderName"
@@ -190,10 +193,10 @@
                 android:layout_height="35dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="15dp"
-                app:tint="@color/Blue"
                 android:layout_marginLeft="15dp"
                 android:padding="2dp"
-                android:src="@drawable/ic_file" />
+                android:src="@drawable/ic_file"
+                app:tint="@color/Blue" />
 
             <TextView
                 android:id="@+id/txtFileName"

@@ -236,6 +236,16 @@ public class GroupChatsAdapter extends RecyclerView.Adapter<GroupChatsAdapter.Ho
         return groupChats.size();
     }
 
+    public int getPositionByMessageId(String pinnedMessageId) {
+        for (int i = 0; i <= groupChats.size(); i++){
+            GroupChats gp = groupChats.get(i);
+            if (gp.getMessageID().equals(pinnedMessageId)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     class HolderGroupChat extends RecyclerView.ViewHolder {
 
         ImageView btnPlay;

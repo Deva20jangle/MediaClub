@@ -212,9 +212,12 @@ public class GroupChatsActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         pinnedMessageId = snapshot.child("MessageID").getValue(String.class);
                         Log.d(TAG, "onDataChange: Pinned MessageId :: " + pinnedMessageId);
-
-                        
-
+                        int pinnedMessagePosition = groupChatsAdapter.getPositionByMessageId(pinnedMessageId);
+                        if (pinnedMessagePosition != -1){
+                            binding.recyclerView.smoothScrollToPosition(pinnedMessagePosition);
+                        } else {
+                            Toast.makeText(GroupChatsActivity.this, "Pinned message has been deleted.", Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                     @Override
