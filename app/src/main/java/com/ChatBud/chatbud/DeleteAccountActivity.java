@@ -76,7 +76,7 @@ public class DeleteAccountActivity extends AppCompatActivity {
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(DeleteAccountActivity.this, "Failed to delete account."+e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(DeleteAccountActivity.this, "Failed to delete account data."+e.getMessage(), Toast.LENGTH_SHORT).show();
                                     }
                                 });
                             } else {

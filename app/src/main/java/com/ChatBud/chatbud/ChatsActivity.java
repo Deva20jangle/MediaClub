@@ -136,6 +136,31 @@ public class ChatsActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: receiverRoom " + receiverRoom);
         Log.d(TAG, "onCreate: ************************** ");
 
+        binding.btnScrollToBottomButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int lastPosition = list.size() - 1;
+                if (lastPosition >= 0){
+                    binding.recyclerView.scrollToPosition(lastPosition);
+                }
+            }
+        });
+
+        binding.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+
+                Log.d(TAG, "onScrolled: Value:: " + dy);
+                if (dy >= 0) {
+                    // Scrolling up or at the top
+                    binding.btnScrollToBottomButton.setVisibility(View.GONE); // Hide the button
+                } else {
+                    // Scrolling down
+                    binding.btnScrollToBottomButton.setVisibility(View.VISIBLE); // Show the button
+                }
+            }
+        });
+
     }
 
     private void initialize() {
