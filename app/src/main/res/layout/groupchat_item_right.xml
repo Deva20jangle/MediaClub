@@ -162,6 +162,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layoutDoc"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -181,7 +182,6 @@
             android:textSize="14sp" />
 
         <LinearLayout
-            android:id="@+id/layoutDoc"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:background="@drawable/bg_layout_round"

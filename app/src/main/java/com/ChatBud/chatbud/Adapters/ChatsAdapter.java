@@ -295,27 +295,6 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ViewHolder> 
                     } else {
                         txtFileName.setText(chats.getTextMessage());
                     }
-
-//                    String chatID = chats.getChatId();
-//
-//                    layoutDoc.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//
-//                            FirebaseStorage.getInstance().getReference().child("Chats/Documents/" + chatID)
-//                                    .getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//                                @Override
-//                                public void onSuccess(Uri uri) {
-//                                    Intent intent = new Intent();
-//                                    intent.setAction(Intent.ACTION_VIEW);
-//                                    intent.setDataAndType(uri, "*/*");
-//                                    context.startActivity(intent);
-//                                }
-//                            });
-//
-//                        }
-//                    });
-
                     break;
             }
         }
