@@ -110,7 +110,7 @@ public class ChatsFragment extends Fragment {
 
         if (firebaseUser != null)
         {
-            getLoginStatus();
+//            getLoginStatus();
             getChat();
         }
 
