@@ -9,6 +9,7 @@ public class ChatList {
     private String urlProfile;
     private String bio;
     private String phno;
+    private String FCMToken;
 
     public ChatList() {
     }
@@ -18,13 +19,22 @@ public class ChatList {
         this.lastmsg = lastmsg;
     }
 
-    public ChatList(String userID, String userName, String date, String urlProfile, String bio, String phno) {
+    public ChatList(String userID, String userName, String date, String urlProfile, String bio, String phno, String FCMToken) {
         this.userID = userID;
         this.userName = userName;
         this.date = date;
         this.urlProfile = urlProfile;
         this.bio = bio;
         this.phno = phno;
+        this.FCMToken = FCMToken;
+    }
+
+    public String getFCMToken() {
+        return FCMToken;
+    }
+
+    public void setFCMToken(String FCMToken) {
+        this.FCMToken = FCMToken;
     }
 
     public String getUserID() {

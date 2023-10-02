@@ -152,30 +152,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
 
                                 //progressDialog.dismiss();
                                 startActivity(new Intent(VerifyOTPActivity.this, SetUserInfoActivity.class));
-                                finish();
-                                /*String userId = user.getUid();
-                                Users users = new Users(userId,
-                                        "",
-                                        c3,
-                                        "",
-                                        "",
-                                        "",
-                                        "",
-                                        "",
-                                        "",
-                                        "",
-                                        "");
 
-
-                                firestore.collection("Users").document("UserInfo").collection(userId)
-                                        .add(users).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                    @Override
-                                    public void onSuccess(DocumentReference documentReference) {
-                                        progressDialog.dismiss();
-                                        startActivity(new Intent(VerifyOTPActivity.this, SetUserInfoActivity.class));
-                                        finish();
-                                    }
-                                });*/
                             }
                             else
                             {

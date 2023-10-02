@@ -33,12 +33,15 @@ import com.ChatBud.chatbud.CreateGroupActivity;
 import com.ChatBud.chatbud.MainActivity;
 import com.ChatBud.chatbud.Models.ChatList;
 import com.ChatBud.chatbud.Models.Users;
+import com.ChatBud.chatbud.ProfileActivity;
 import com.ChatBud.chatbud.R;
 import com.ChatBud.chatbud.SettingActivity;
 import com.ChatBud.chatbud.StartActivity;
 import com.ChatBud.chatbud.databinding.FragmentChatsBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -48,6 +51,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -220,7 +224,8 @@ public class ChatsFragment extends Fragment {
                                         "",
                                         documentSnapshot.getString("imageProfile"),
                                         documentSnapshot.getString("bio"),
-                                        documentSnapshot.getString("userPhone")
+                                        documentSnapshot.getString("userPhone"),
+                                        documentSnapshot.getString("FCMToken")
                                 );
                                 list.add(chatList);
                             }catch (Exception e){
@@ -284,9 +289,20 @@ public class ChatsFragment extends Fragment {
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                        FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(getContext(), StartActivity.class));
+                        FirebaseMessaging.getInstance().deleteToken().addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                firestore.collection("Users").document(firebaseUser.getUid()).update("FCMToken", "").addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Toast.makeText(getContext(), "logged out successfully.", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                                dialog.cancel();
+                                FirebaseAuth.getInstance().signOut();
+                                startActivity(new Intent(getContext(), StartActivity.class));
+                            }
+                        });
                     }
                 });
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {

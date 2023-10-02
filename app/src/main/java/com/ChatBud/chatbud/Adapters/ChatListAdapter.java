@@ -69,7 +69,10 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.Holder
                         .putExtra("userName",chatlist.getUserName())
                         .putExtra("Bio", chatlist.getBio())
                         .putExtra("phoneNo", chatlist.getPhno())
+                        .putExtra("FCMToken", chatlist.getFCMToken())
                         .putExtra("userProfile",chatlist.getUrlProfile()));
+
+                Log.d("TAG", "onClick: in chatListAdapter FCMToken:: " + chatlist.getFCMToken());
             }
         });
 

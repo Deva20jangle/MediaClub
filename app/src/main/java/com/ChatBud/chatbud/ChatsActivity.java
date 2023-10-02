@@ -39,14 +39,11 @@ import com.ChatBud.chatbud.Adapters.ChatsAdapter;
 import com.ChatBud.chatbud.Models.Chats;
 import com.ChatBud.chatbud.databinding.ActivityChatsBinding;
 import com.ChatBud.chatbud.dialog.DialogReviewSendImage;
-import com.ChatBud.chatbud.interfaces.OnReadChatCallBack;
-import com.ChatBud.chatbud.service.ChatService;
 import com.ChatBud.chatbud.service.FirebaseService;
 import com.bumptech.glide.Glide;
 import com.devlomi.record_view.OnBasketAnimationEnd;
 import com.devlomi.record_view.OnRecordListener;
-import com.google.android.gms.cast.framework.media.ImagePicker;
-import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -56,11 +53,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -74,15 +74,22 @@ import java.util.Objects;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
 public class ChatsActivity extends AppCompatActivity {
 
     private static final String TAG = "ChatsActivity";
     private static final int REQUEST_CORD_PERMISSION = 332;
     private ActivityChatsBinding binding;
-    private String receiverID;
     private ChatsAdapter adapder;
     private final List<Chats> list = new ArrayList<>();
-    private String userProfile, userName, bio, phNo;
+    private String userProfile, userName, bio, phNo, receiverID, FCMToken;
     private String bioFromContact, phNoFromContact;
     private boolean isActionShown = false;
     //private ChatService chatService;
@@ -104,8 +111,7 @@ public class ChatsActivity extends AppCompatActivity {
 
     //Audio
     private MediaRecorder mediaRecorder;
-    private String audio_path;
-    private String sTime;
+    private String audio_path, sTime;
 
     @Override
 
@@ -125,6 +131,7 @@ public class ChatsActivity extends AppCompatActivity {
         userProfile = intent.getStringExtra("userProfile");
         bio = intent.getStringExtra("Bio");
         phNo = intent.getStringExtra("phoneNo");
+        FCMToken = intent.getStringExtra("FCMToken");
 
         initialize();
         initBtnClick();
@@ -362,32 +369,7 @@ public class ChatsActivity extends AppCompatActivity {
                             });
                         }
                     });
-
-/*                    reference.child("Chats")
-                            .child(senderRoom)
-                            .child(timestamp)
-                            .setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            reference.child("Chats")
-                                    .child(receiverRoom)
-                                    .child(timestamp)
-                                    .setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    Log.d(TAG, "onCreate: ********* Message Sent *********");
-                                    //Add to ChatList
-                                    DatabaseReference chatRef1 = FirebaseDatabase.getInstance().getReference("ChatList").child(user.getUid()).child(receiverID);
-                                    chatRef1.child("chatid").setValue(receiverID);
-
-                                    //
-                                    DatabaseReference chatRef2 = FirebaseDatabase.getInstance().getReference("ChatList").child(receiverID).child(user.getUid());
-                                    chatRef2.child("chatid").setValue(user.getUid());
-                                }
-                            });
-                        }
-                    });*/
-
+                    sendNotification(message);
                     binding.edMessage.setText("");
                 }
             }
@@ -454,6 +436,66 @@ public class ChatsActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void sendNotification(String message) {
+        Log.d(TAG, "sendNotification: in ChatsActivity FCMToken:: " + FCMToken);
+
+        DocumentReference docRef = firestore.collection("Users").document(user.getUid());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()){
+                        String userName = document.getString("userName");
+                        try {
+                            JSONObject jsonObject = new JSONObject();
+
+                            JSONObject notificationObject = new JSONObject();
+                            notificationObject.put("title", userName);
+                            notificationObject.put("body", message);
+
+                            JSONObject dataObject = new JSONObject();
+                            dataObject.put("userID", user.getUid());
+
+                            jsonObject.put("notification", notificationObject);
+                            jsonObject.put("data", dataObject);
+                            jsonObject.put("to", FCMToken);
+
+                            callAPi(jsonObject);
+
+                        }catch (Exception e){
+
+                        }
+                    }
+                }
+            }
+        });
+
+    }
+
+    void callAPi(JSONObject jsonObject){
+        MediaType JSON = MediaType.get("application/json; charset=utf-8");
+        OkHttpClient client = new OkHttpClient();
+        String url = "https://fcm.googleapis.com/fcm/send";
+        RequestBody body = RequestBody.create(jsonObject.toString(), JSON);
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .header("Authorization", "Bearer AAAA3RK16uc:APA91bHM_FTDl9fAlctxmGQZgs-_jBQzPfyiLi5yi09oQwJ_siWw_3Gp6YNScn1VkjqZ7y1OKgfA1dSTMhuLpW55-o-G5KWtXHfEWV9sXUHdjs4sGQoI0_6imjpTp5KaQQZ1SrMR8Jiw")
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+
+            }
+        });
     }
 
     private void selectDocument() {
