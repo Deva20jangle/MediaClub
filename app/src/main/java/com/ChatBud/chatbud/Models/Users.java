@@ -11,11 +11,12 @@ public class Users {
     private String status;
     private String myDeviceID;
     private String bio;
+    private String FCMToken;
 
     public Users() {
     }
 
-    public Users(String userID, String userName, String userPhone, String imageProfile, String imageCover, String email, String dateOfBirth, String gender, String status, String bio, String myDeviceID) {
+    public Users(String userID, String userName, String userPhone, String imageProfile, String imageCover, String email, String dateOfBirth, String gender, String status, String bio, String myDeviceID, String FCMToken) {
         this.userID = userID;
         this.userName = userName;
         this.userPhone = userPhone;
@@ -27,6 +28,15 @@ public class Users {
         this.status = status;
         this.bio = bio;
         this.myDeviceID = myDeviceID;
+        this.FCMToken = FCMToken;
+    }
+
+    public String getFCMToken() {
+        return FCMToken;
+    }
+
+    public void setFCMToken(String FCMToken) {
+        this.FCMToken = FCMToken;
     }
 
     public String getUserID() {

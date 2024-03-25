@@ -221,7 +221,7 @@ public class GroupChatsAdapter extends RecyclerView.Adapter<GroupChatsAdapter.Ho
             @Override
             public void onClick(View view) {
                 if (groupChat.getType().equals("IMAGE")){
-                    String image = groupChat.getMessage();
+                    String image = groupChat.getUrl();
                     Intent intent = new Intent(context, ReviewImageActivity.class);
                     intent.putExtra("image", image);
                     context.startActivity(intent);
@@ -234,6 +234,16 @@ public class GroupChatsAdapter extends RecyclerView.Adapter<GroupChatsAdapter.Ho
     @Override
     public int getItemCount() {
         return groupChats.size();
+    }
+
+    public int getPositionByMessageId(String pinnedMessageId) {
+        for (int i = 0; i <= groupChats.size(); i++){
+            GroupChats gp = groupChats.get(i);
+            if (gp.getMessageID().equals(pinnedMessageId)){
+                return i;
+            }
+        }
+        return -1;
     }
 
     class HolderGroupChat extends RecyclerView.ViewHolder {
@@ -330,12 +340,13 @@ public class GroupChatsAdapter extends RecyclerView.Adapter<GroupChatsAdapter.Ho
                     break;
 
                 case "DOCUMENT":
-
+                    layoutDoc.setVisibility(View.VISIBLE);
                     layoutText.setVisibility(View.GONE);
                     layoutImage.setVisibility(View.GONE);
                     layoutVoice.setVisibility(View.GONE);
-                    layoutDoc.setVisibility(View.VISIBLE);
 
+                    Log.d("TAG", "bind:: MessageID:: " + groupChats.getMessageID());
+                    Log.d("TAG", "bind:: MessageType:: " + groupChats.getType());
                     txtDocSenderName.setText(senderName);
                     if (groupChats.getMessage().length() >= 25){
                         String name = groupChats.getMessage().substring(0, 25);
@@ -363,8 +374,6 @@ public class GroupChatsAdapter extends RecyclerView.Adapter<GroupChatsAdapter.Ho
 
                         }
                     });
-
-
                     break;
 
             }

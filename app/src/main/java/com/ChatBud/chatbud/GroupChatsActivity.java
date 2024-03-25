@@ -212,9 +212,12 @@ public class GroupChatsActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         pinnedMessageId = snapshot.child("MessageID").getValue(String.class);
                         Log.d(TAG, "onDataChange: Pinned MessageId :: " + pinnedMessageId);
-
-                        
-
+                        int pinnedMessagePosition = groupChatsAdapter.getPositionByMessageId(pinnedMessageId);
+                        if (pinnedMessagePosition != -1){
+                            binding.recyclerView.smoothScrollToPosition(pinnedMessagePosition);
+                        } else {
+                            Toast.makeText(GroupChatsActivity.this, "Pinned message has been deleted.", Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                     @Override
@@ -223,6 +226,29 @@ public class GroupChatsActivity extends AppCompatActivity {
                     }
                 });
 
+            }
+        });
+
+        binding.btnScrollToBottomButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int lastPosition = groupChatsAdapter.getItemCount() - 1;
+                if (lastPosition >= 0){
+                    binding.recyclerView.scrollToPosition(lastPosition);
+                }
+            }
+        });
+
+        binding.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                if (dy >= 0) {
+                    // Scrolling up or at the top
+                    binding.btnScrollToBottomButton.setVisibility(View.GONE); // Hide the button
+                } else {
+                    // Scrolling down
+                    binding.btnScrollToBottomButton.setVisibility(View.VISIBLE); // Show the button
+                }
             }
         });
 
